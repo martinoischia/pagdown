@@ -3,26 +3,28 @@ GroupAdd, altf4 , ahk_class ApplicationFrameWindow
 GroupAdd, altf4 , ahk_class GraphApp
 GroupAdd, altf4 , ahk_class RGLDevice
 GroupAdd, altf4 , ahk_class TaskManagerWindow
+GroupAdd, altf4 , ahk_exe OUTLOOK.EXE
+GroupAdd, altf4 , ahk_exe VirtualBox.exe
 return
 
 ^\::suspend
 return
 
-^a::
-Send, {Left}
-return
+;^a::
+;Send, {Left}
+;return
  
-^d::
-Send, {Right}
-return
+;^d::
+;Send, {Right}
+;return
 
-^i::
-Send, {Up}
-return
+;^i::
+;Send, {Up}
+;return
 
-^j::
-Send, {Down}
-return
+;^j::
+;Send, {Down}
+;return
 
 
 3::
@@ -49,13 +51,6 @@ return
 Send, {PgUp}
 return
 
-+Down::
-Send, {PgDn}
-return
-
-+Up::
-Send, {PgUp}
-return
 
 Home::
 Send, !{Tab}
