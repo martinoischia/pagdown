@@ -10,22 +10,37 @@ return
 ^\::suspend
 return
 
-;^a::
-;Send, {Left}
-;return
- 
-;^d::
-;Send, {Right}
-;return
+5::
+Send, {#}
+return
 
-;^i::
-;Send, {Up}
-;return
+8::
+Send, {*}
+return
 
-;^j::
-;Send, {Down}
-;return
+$[::
+Send, {Left}
+return
 
+$]::
+Send, {Right}
+return
+
+![::
+Send, {Up}
+return
+
+!]::
+Send, {Down}
+return
+
+^]::
+Send, {]}
+return
+
+^[::
+Send, {[}
+return
 
 3::
 Send, {{}

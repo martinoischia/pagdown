@@ -189,7 +189,7 @@
     </PluginCommands>
     <ScintillaKeys>
         <ScintKey ScintID="2345" menuCmdID="0" Ctrl="yes" Alt="no" Shift="no" Key="81" />
-        <ScintKey ScintID="2013" menuCmdID="42007" Ctrl="yes" Alt="yes" Shift="no" Key="65" />
+        <ScintKey ScintID="2013" menuCmdID="42007" Ctrl="yes" Alt="no" Shift="no" Key="65" />
         <ScintKey ScintID="2347" menuCmdID="0" Ctrl="yes" Alt="no" Shift="no" Key="69" />
         <ScintKey ScintID="2342" menuCmdID="0" Ctrl="yes" Alt="yes" Shift="no" Key="105" />
         <ScintKey ScintID="2343" menuCmdID="0" Ctrl="yes" Alt="yes" Shift="no" Key="104" />

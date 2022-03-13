@@ -181,7 +181,7 @@
         "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
     },
     {
-        "key": "alt+d",
+        "key": "ctrl+alt+d",
         "command": "editor.action.revealDefinition",
         "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
     },
@@ -218,7 +218,7 @@
         "command": "-workbench.action.showAllSymbols"
     },
     {
-        "key": "ctrl+t",
+        "key": "ctrl+n",
         "command": "workbench.action.files.newUntitledFile"
     },
     {
@@ -226,7 +226,7 @@
         "command": "-workbench.action.files.newUntitledFile"
     },
     {
-        "key": "alt+a",
+        "key": "ctrl+a",
         "command": "editor.action.selectAll"
     },
     {
@@ -433,7 +433,7 @@
         "command": "workbench.action.evenEditorWidths"
     },
     {
-        "key": "ctrl+n",
+        "key": "ctrl+t",
         "command": "workbench.action.togglePanel"
     },
     {
@@ -451,5 +451,19 @@
     {
         "key": "oem_102",
         "command": "editor.action.peekDefinition"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "workbench.action.terminal.scrollToPreviousCommand"
+    },
+    {
+        "key": "ctrl+alt+w",
+        "command": "toggleFindWholeWord",
+        "when": "editorFocus"
+    },
+    {
+        "key": "alt+w",
+        "command": "-toggleFindWholeWord",
+        "when": "editorFocus"
     }
 ]
