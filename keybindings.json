@@ -104,7 +104,7 @@
         "key": "ctrl+tab",
         "command": "workbench.action.focusActiveEditorGroup",
         "when": "terminal.active"
-    },    
+    },
     {
         "key": "ctrl+tab",
         "command": "workbench.action.terminal.focus",
@@ -201,10 +201,6 @@
         "when": "inFilesPicker && inQuickOpen"
     },
     {
-        "key": "ctrl+alt+e",
-        "command": "cursorEnd"
-    },
-    {
         "key": "end",
         "command": "-cursorEnd",
         "when": "textInputFocus"
@@ -258,7 +254,7 @@
         "command": "workbench.action.toggleStatusbarVisibility"
     },
     {
-        "key": "alt+e",
+        "key": "ctrl+alt+e",
         "command": "revealFileInOS",
     },
     {
@@ -344,15 +340,6 @@
     {
         "key": "ctrl+alt+left",
         "command": "-workbench.action.moveEditorToPreviousGroup"
-    },
-    {
-        "key": "ctrl+g",
-        "command": "workbench.action.gotoLine",
-        "when": "!editorLangId == 'latex'"
-    },
-    {
-        "key": "ctrl+g",
-        "command": "-workbench.action.gotoLine"
     },
     {
         "key": "ctrl+g",
@@ -465,5 +452,28 @@
         "key": "alt+w",
         "command": "-toggleFindWholeWord",
         "when": "editorFocus"
+    },
+    {
+        "key": "alt+e",
+        "command": "workbench.files.action.showActiveFileInExplorer"
+    },
+    {
+        "key": "ctrl+oem_102",
+        "command": "editor.action.jumpToBracket",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+oem_5",
+        "command": "-editor.action.jumpToBracket",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "workbench.action.gotoLine",
+        "when": "editorLangId != 'latex'"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "-workbench.action.gotoLine"
     }
 ]
