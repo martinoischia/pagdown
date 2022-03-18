@@ -14,6 +14,10 @@ return
 Send, {#}
 return
 
+7::
+Send, {&}
+return
+
 8::
 Send, {*}
 return
