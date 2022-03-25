@@ -22,28 +22,20 @@ return
 Send, {*}
 return
 
-$[::
+^-::
 Send, {Left}
 return
 
-$]::
+^=::
 Send, {Right}
 return
 
-![::
+^9::
 Send, {Up}
 return
 
-!]::
+^0::
 Send, {Down}
-return
-
-^]::
-Send, {]}
-return
-
-^[::
-Send, {[}
 return
 
 3::

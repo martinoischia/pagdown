@@ -101,16 +101,6 @@
         "when": "inEditorsPicker && inQuickOpen"
     },
     {
-        "key": "ctrl+tab",
-        "command": "workbench.action.focusActiveEditorGroup",
-        "when": "terminal.active"
-    },
-    {
-        "key": "ctrl+tab",
-        "command": "workbench.action.terminal.focus",
-        "when": "editorTextFocus"
-    },
-    {
         "key": "ctrl+numpad0",
         "command": "workbench.action.openRecent"
     },
@@ -493,5 +483,45 @@
         "key": "ctrl+oem_period",
         "command": "-editor.action.quickFix",
         "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.terminal.scrollToNextCommand"
+    },
+    {
+        "key": "ctrl+alt+numpad_multiply",
+        "command": "workbench.action.terminal.selectToPreviousCommand"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.focusNextGroup"
+    },
+    {
+        "key": "alt+2",
+        "command": "scrollLineDown",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+down",
+        "command": "-scrollLineDown",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "alt+2",
+        "command": "-workbench.action.openEditorAtIndex2"
+    },
+    {
+        "key": "alt+1",
+        "command": "-workbench.action.openEditorAtIndex1"
+    },
+    {
+        "key": "alt+1",
+        "command": "scrollLineUp",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+up",
+        "command": "-scrollLineUp",
+        "when": "textInputFocus"
     }
 ]
