@@ -10,8 +10,24 @@ return
 ^\::suspend
 return
 
+3::
+Send, {{}
+return
+
 5::
-Send, {#}
+Send, {}}
+return
+
+4::
+Send, {`$}
+return
+
+;$+5::
+;Send, {Text}#include
+;return
+
+6::
+Send, {^}
 return
 
 7::
@@ -22,28 +38,12 @@ return
 Send, {*}
 return
 
-^-::
-Send, {Left}
+9::
+Send, {text}(
 return
 
-^=::
-Send, {Right}
-return
-
-^9::
-Send, {Up}
-return
-
-^0::
-Send, {Down}
-return
-
-3::
-Send, {{}
-return
-
-4::
-Send, {}}
+0::
+Send, {text})
 return
 
 ^Up::
@@ -60,22 +60,6 @@ return
 
 +WheelUp::
 Send, {PgUp}
-return
-
-
-Home::
-Send, !{Tab}
-return
-
-
-
-9::
-Send, {text}(
-return
-
-
-0::
-Send, {text})
 return
 
 ^+SPACE::  Winset, Alwaysontop, , A
@@ -128,7 +112,6 @@ return
 
 
 #IfWinActive ahk_class Notepad++
-
 
 +Down::
 Send, +{Down}
