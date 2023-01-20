@@ -1,58 +1,241 @@
 ; keep this groupadd on top
-GroupAdd, altf4 , ahk_class ApplicationFrameWindow
-GroupAdd, altf4 , ahk_class GraphApp
-GroupAdd, altf4 , ahk_class RGLDevice
-GroupAdd, altf4 , ahk_class TaskManagerWindow
-GroupAdd, altf4 , ahk_exe OUTLOOK.EXE
-GroupAdd, altf4 , ahk_exe VirtualBox.exe
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;; SpecificStuff ;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;
+
+;GroupAdd, altf4 , ahk_class ApplicationFrameWindow
+;GroupAdd, altf4 , ahk_class GraphApp
+;GroupAdd, altf4 , ahk_class RGLDevice
+
+GroupAdd, f10ctrlw_insteadof_altf4 , ahk_exe code.exe
+GroupAdd, f10ctrlw_insteadof_altf4 , ahk_exe chrome.exe
+GroupAdd, f10ctrlw_insteadof_altf4 , ahk_exe notepad++.exe
+GroupAdd, f10ctrlw_insteadof_altf4, ahk_exe SumatraPDF.exe
+
+GroupAdd, pagdowntoswitchtab, ahk_exe ApplicationFrameHost.exe
+GroupAdd, pagdowntoswitchtab, ahk_exe SumatraPDF.exe
+GroupAdd, pagdowntoswitchtab, ahk_exe chrome.exe
+GroupAdd, pagdowntoswitchtab, ahk_exe AcrobatSDIWindow
+GroupAdd, pagdowntoswitchtab, ahk_exe notepad++.exe
 return
 
-^\::suspend
+
+
+#IfWinActive ahk_group f10ctrlw_insteadof_altf4
+F10::
+Send, ^w
 return
 
-3::
+
+
+
+#IfWinActive ahk_group pagdowntoswitchtab
+PgUp::
+Send, ^+{Tab}}
+return
+
+PgDn::
+Send, ^{Tab}}
+return
+
+#IfWinActive ahk_exe code.exe
+PgUp::
+Send, ^+{PgUp}}
+return
+
+PgDn::
+Send, ^+{PgDn}}
+return
+#IfWinActive
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;random;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+CapsLock::suspend
+return
+
+$[::Send,{=}
+
+$+[::Send,{+}
+
+$=::Send,{[}
+
+^+SPACE::  Winset, Alwaysontop, , A
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; number  row ;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+$1::Send, {#}
+
+$2::
+Send, {\}
+return
+
+$+2::
+Send, {|}
+return
+
+$3::
 Send, {{}
 return
 
-5::
-Send, {}}
+$+3::
+Send, {@}
 return
 
-4::
-Send, {`$}
+$4::
+Send, {$}
 return
 
-;$+5::
-;Send, {Text}#include
-;return
+$5::Send,{Up}
 
-6::
+$6::
 Send, {^}
 return
 
-7::
-Send, {&}
+$7::
+Send,{}}
 return
 
-8::
+$8::
 Send, {*}
 return
 
-9::
-Send, {text}(
+$9::
+Send, {(}
 return
 
-0::
-Send, {text})
+$0::
+Send,{)}
 return
 
-^Up::
-SendInput, {Up}{Up}{Up}{Up}
+;;;; FunctionRow ;;;
+
+F1::
+Send, ^z
 return
 
-^Down::
-SendInput, {Down}{Down}{Down}{Down}
+F2::
+Send, ^x
 return
+
+F3::
+Send, ^c
+return
+
+F4::
+Send, ^v
+return
+
+F9::
+Send, ^s
+return
+
+F10::
+Send, !{F4}
+return
+
+F11::Send,^t
+
+PrintScreen::
+Send, #n
+return
+
+F5::
+if !WinExist("ahk_exe chrome.exe")
+{
+Run "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
+}
+else
+{	
+	WinGet, WinListVariable, List, ahk_exe chrome.exe
+	if (WinListVariable>1)
+	{
+		WinGet, ActiveExe, ProcessName, A
+		if (ActiveExe=="chrome.exe")
+		{
+		WinSet, Bottom,, A
+		}
+	}
+	WinActivate, ahk_exe chrome.exe
+}
+return
+
+
+F6::
+if !WinExist("ahk_exe code.exe")
+{
+Run "C:\Users\ischi\AppData\Local\Programs\Microsoft VS Code\Code.exe"
+}
+else
+{
+	WinGet, WinListVariable, List, ahk_exe code.exe
+	if (WinListVariable>1)
+	{
+		WinGet, ActiveExe, ProcessName, A
+		if (ActiveExe=="code.exe")
+		{
+		WinSet, Bottom,, A
+		}
+	}
+	WinActivate, ahk_exe code.exe
+}
+return
+
+F7::
+if !WinExist("ahk_exe notepad++.exe")
+{
+Run notepad++.exe
+}
+else
+{
+	WinGet, WinListVariable, List, ahk_exe notepad++.exe
+	if (WinListVariable>1)
+	{
+		WinGet, ActiveExe, ProcessName, A
+		if (ActiveExe=="notepad++.exe")
+		{
+		WinSet, Bottom,, A
+		}
+	}
+	WinActivate, ahk_exe notepad++.exe
+}
+return
+
+F8::
+if !WinExist("ahk_exe ApplicationFrameHost.exe")
+{
+Run "C:\Program Files\WindowsApps\5319275A.WhatsAppDesktop_2.2252.7.0_x64__cv1g1gvanyjgm\WhatsApp.exe"
+}
+else
+{
+	WinGet, WinListVariable, List, ahk_exe ApplicationFrameHost.exe
+	if (WinListVariable>1)
+	{
+		WinGet, ActiveExe, ProcessName, A
+		if (ActiveExe=="ApplicationFrameHost.exe")
+		{
+		WinSet, Bottom,, A
+		}
+	}
+	WinActivate, ahk_exe ApplicationFrameHost.exe
+}
+return
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;  MOUSE  ;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+$RButton::MButton
+$MButton::RButton
+
 
 +WheelDown::
 Send, {PgDn}
@@ -62,7 +245,20 @@ return
 Send, {PgUp}
 return
 
-^+SPACE::  Winset, Alwaysontop, , A
+!WheelDown::
+Send, {Volume_Down}
+return
+
+!WheelUp::
+Send, {Volume_Up}
+return
+
+!LButton::
+Send, {Volume_Mute}
+
+
+
+;___________________________________
 
 ; !q::
 ;  CoordMode, Mouse, Screen ;
@@ -74,49 +270,71 @@ return
 ;  }
 ; return
 
-SetTitleMatchMode, 2
+;ScrollLock::
+;if !WinExist("ahk_exe OUTLOOK.exe")
+;{
+;Run "C:\Program Files (x86)\Microsoft Office\root\Office16\OUTLOOK.EXE"
+;}
+;else
+;{
+;	WinGet, WinListVariable, List, ahk_exe OUTLOOK.exe
+;	if (WinListVariable>1)
+;	{
+;		WinGet, ActiveExe, ProcessName, A
+;		if (ActiveExe=="OUTLOOK.exe")
+;		{
+;		WinSet, Bottom,, A
+;		}
+;	}
+;	WinActivate, ahk_exe OUTLOOK.exe
+;}
+;return
 
-#IfWinActive ahk_exe chrome.exe
-^1::
-Send, ^+{Tab}}
-return
-
-^2::
-Send, ^{Tab}}
-return
-
-#IfWinActive ahk_exe code.exe
-
-+Down::
-Send, +{Down}
-return
-
-+Up::
-Send, +{Up}
-return
-
-#IfWinActive ahk_class AcrobatSDIWindow
-^1::
-Send, ^+{Tab}}
-return
-
-^2::
-Send, ^{Tab}}
-return
+;Pause::
+;Send, ^w
+;return
 
 
-#IfWinActive ahk_group altf4 
-^w::
-Send, !{F4}
-return
+;3::
+;Send, {{}
+;return
 
+;4::
+;Send, {}}
+;return
 
-#IfWinActive ahk_class Notepad++
+;$+5::
+;Send, {Text}#include
+;return
 
-+Down::
-Send, +{Down}
-return
+;5::
+;Send, {^}
+;return
 
-+Up::
-Send, +{Up}
-return
+;6::
+;Send, {`$}
+;return
+
+;7::
+;Send, {&}
+;return
+
+;8::
+;Send, {*}
+;return
+
+;9::
+;Send, {text}(
+;return
+
+;0::
+;Send, {text})
+;return
+
+;^Up::
+;SendInput, {Up}{Up}{Up}{Up}
+;return
+
+;^Down::
+;SendInput, {Down}{Down}{Down}{Down}
+;return

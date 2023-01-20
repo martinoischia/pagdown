@@ -6,7 +6,7 @@
         "command": "-workbench.action.quickOpenView"
     },
     {
-        "key": "ctrl+q",
+        "key": "ctrl+6",
         "command": "cursorLineStart"
     },
     {
@@ -28,7 +28,7 @@
     },
     // 
     {
-        "key": "ctrl+e",
+        "key": "ctrl+4",
         "command": "cursorLineEnd"
     },
     {
@@ -57,7 +57,7 @@
         "when": "inKeybindings && keybindingFocus"
     },
     {
-        "key": "ctrl+k ctrl+a",
+        "key": "alt+a",
         "command": "workbench.action.toggleActivityBarVisibility"
     },
     // 
@@ -71,7 +71,7 @@
     },
     // 
     {
-        "key": "ctrl+2",
+        "key": "ctrl+shift+pagedown",
         "command": "workbench.action.nextEditor"
     },
     {
@@ -93,7 +93,7 @@
     },
     // 
     {
-        "key": "ctrl+1",
+        "key": "ctrl+shift+pageup",
         "command": "workbench.action.previousEditor"
     },
     {
@@ -190,10 +190,6 @@
     {
         "key": "ctrl+tab",
         "command": "-workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
-    },
-    {
-        "key": "ctrl+tab",
-        "command": "workbench.action.focusNextGroup"
     },
     {
         "key": "ctrl+alt+numpad9",
@@ -329,7 +325,7 @@
     {
         "key": "alt+2",
         "command": "scrollLineDown",
-        "when": "textInputFocus"
+        "when": "editorFocus"
     },
     {
         "key": "ctrl+down",
@@ -348,7 +344,7 @@
     {
         "key": "alt+1",
         "command": "scrollLineUp",
-        "when": "textInputFocus"
+        "when": "editorFocus"
     },
     {
         "key": "ctrl+up",
@@ -429,5 +425,147 @@
     {
         "key": "f1",
         "command": "-workbench.action.showCommands"
+    },
+    {
+        "key": "ctrl+4",
+        "command": "-workbench.action.focusFourthEditorGroup"
+    },
+    {
+        "key": "ctrl+6",
+        "command": "-workbench.action.focusSixthEditorGroup"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.focusPanel",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "panelFocus"
+    },
+    {
+        "key": "alt+1",
+        "command": "workbench.action.terminal.focusPreviousPane",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "alt+2",
+        "command": "workbench.action.terminal.focusNextPane",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "alt+v",
+        "command": "latex-workshop.view",
+        "when": "!config.latex-workshop.bind.altKeymap.enabled && !virtualWorkspace && editorLangId =~ /^latex$|^latex-expl3$|^rsweave$|^jlweave$/"
+    },
+    {
+        "key": "ctrl+a",
+        "command": "-extension.vim_ctrl+a",
+        "when": "editorTextFocus && vim.active && vim.use<C-a> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+backspace",
+        "command": "-extension.vim_ctrl+backspace",
+        "when": "editorTextFocus && vim.active && vim.use<C-BS> && !inDebugRepl && vim.mode != 'Insert'"
+    },
+    {
+        "key": "ctrl+m",
+        "command": "-extension.vim_ctrl+m",
+        "when": "editorTextFocus && vim.active && vim.use<C-m> && !inDebugRepl || vim.active && vim.use<C-m> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-m> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "-extension.vim_ctrl+n",
+        "when": "editorTextFocus && vim.active && vim.use<C-n> && !inDebugRepl || vim.active && vim.use<C-n> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-n> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "-extension.vim_ctrl+t",
+        "when": "editorTextFocus && vim.active && vim.use<C-t> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+x",
+        "command": "-extension.vim_ctrl+x",
+        "when": "editorTextFocus && vim.active && vim.use<C-x> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+z",
+        "command": "-extension.vim_ctrl+z",
+        "when": "editorTextFocus && vim.active && vim.use<C-z> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+`",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "terminal.active"
+    },
+    {
+        "key": "ctrl+`",
+        "command": "-workbench.action.terminal.toggleTerminal",
+        "when": "terminal.active"
+    },
+    {
+        "key": "ctrl+alt+w",
+        "command": "extension.vim_ctrl+w",
+        "when": "editorTextFocus && vim.active && vim.use<C-w> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-extension.vim_ctrl+w",
+        "when": "editorTextFocus && vim.active && vim.use<C-w> && !inDebugRepl"
+    },
+    {
+        "key": "insert",
+        "command": "workbench.action.focusRightGroup"
+    },
+    {
+        "key": "ctrl+k ctrl+right",
+        "command": "-workbench.action.focusRightGroup"
+    },
+    {
+        "key": "ctrl+numpad1",
+        "command": "workbench.action.focusLeftGroup"
+    },
+    {
+        "key": "ctrl+k ctrl+left",
+        "command": "-workbench.action.focusLeftGroup"
+    },
+    {
+        "key": "ctrl+insert",
+        "command": "workbench.action.focusRightGroup"
+    },
+    {
+        "key": "ctrl+insert",
+        "command": "-editor.action.clipboardCopyAction"
+    },
+    {
+        "key": "insert",
+        "command": "-extension.vim_insert",
+        "when": "editorTextFocus && vim.active && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "-extension.vim_ctrl+c",
+        "when": "editorTextFocus && vim.active && vim.overrideCtrlC && vim.use<C-c> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+s",
+        "command": "-extension.vim_ctrl+s",
+        "when": "editorTextFocus && vim.active && vim.use<C-s> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "-extension.vim_ctrl+h",
+        "when": "editorTextFocus && vim.active && vim.use<C-h> && !inDebugRepl"
+    },
+    {
+        "key": "shift+escape",
+        "command": "notifications.hideList",
+        "when": "notificationCenterVisible"
+    },
+    {
+        "key": "shift+escape",
+        "command": "notifications.hideToasts",
+        "when": "notificationToastsVisible"
     }
 ]

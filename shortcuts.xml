@@ -7,8 +7,8 @@
         <Shortcut id="41007" Ctrl="no" Alt="no" Shift="no" Key="0" />
         <Shortcut id="41017" Ctrl="yes" Alt="no" Shift="no" Key="82" />
         <Shortcut id="50005" Ctrl="no" Alt="no" Shift="no" Key="0" />
-        <Shortcut id="44095" Ctrl="yes" Alt="no" Shift="no" Key="50" />
-        <Shortcut id="44096" Ctrl="yes" Alt="no" Shift="no" Key="49" />
+        <Shortcut id="44095" Ctrl="yes" Alt="no" Shift="no" Key="9" />
+        <Shortcut id="44096" Ctrl="yes" Alt="no" Shift="yes" Key="9" />
         <Shortcut id="43011" Ctrl="yes" Alt="no" Shift="no" Key="70" />
         <Shortcut id="43001" Ctrl="no" Alt="no" Shift="no" Key="0" />
         <Shortcut id="43040" Ctrl="no" Alt="no" Shift="no" Key="0" />
@@ -56,10 +56,11 @@
         <Shortcut id="44065" Ctrl="yes" Alt="yes" Shift="no" Key="101" />
         <Shortcut id="44066" Ctrl="yes" Alt="yes" Shift="no" Key="102" />
         <Shortcut id="44072" Ctrl="no" Alt="yes" Shift="yes" Key="51" />
-        <Shortcut id="41001" Ctrl="yes" Alt="no" Shift="no" Key="78" />
+        <Shortcut id="41001" Ctrl="yes" Alt="no" Shift="no" Key="84" />
         <Shortcut id="41019" Ctrl="no" Alt="yes" Shift="no" Key="69" />
         <Shortcut id="41016" Ctrl="yes" Alt="yes" Shift="no" Key="69" />
         <Shortcut id="41003" Ctrl="yes" Alt="no" Shift="no" Key="87" />
+        <Shortcut id="50003" Ctrl="yes" Alt="yes" Shift="yes" Key="9" />
     </InternalCommands>
     <Macros>
         <Macro name="Trim Trailing Space and Save" Ctrl="no" Alt="yes" Shift="yes" Key="83">
