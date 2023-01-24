@@ -71,19 +71,6 @@
     },
     // 
     {
-        "key": "ctrl+shift+pagedown",
-        "command": "workbench.action.nextEditor"
-    },
-    {
-        "key": "ctrl+2",
-        "command": "workbench.action.terminal.focusNext",
-        "when": "terminalFocus && terminalProcessSupported"
-    },
-    {
-        "key": "ctrl+pagedown",
-        "command": "-workbench.action.nextEditor"
-    },
-    {
         "key": "ctrl+shift+alt+2",
         "command": "workbench.action.focusSecondEditorGroup"
     },
@@ -93,17 +80,13 @@
     },
     // 
     {
-        "key": "ctrl+shift+pageup",
-        "command": "workbench.action.previousEditor"
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.previousEditor",
+        "when": "editorFocus"
     },
     {
         "key": "ctrl+shift+alt+1",
         "command": "workbench.action.focusFirstEditorGroup"
-    },
-    {
-        "key": "ctrl+1",
-        "command": "workbench.action.terminal.focusPrevious",
-        "when": "terminalFocus && terminalProcessSupported"
     },
     {
         "key": "ctrl+1",
@@ -435,16 +418,6 @@
         "command": "-workbench.action.focusSixthEditorGroup"
     },
     {
-        "key": "ctrl+tab",
-        "command": "workbench.action.focusPanel",
-        "when": "editorFocus"
-    },
-    {
-        "key": "ctrl+tab",
-        "command": "workbench.action.focusActiveEditorGroup",
-        "when": "panelFocus"
-    },
-    {
         "key": "alt+1",
         "command": "workbench.action.terminal.focusPreviousPane",
         "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
@@ -567,5 +540,54 @@
         "key": "shift+escape",
         "command": "notifications.hideToasts",
         "when": "notificationToastsVisible"
+    },
+    {
+        "key": "ctrl+alt+pagedown",
+        "command": "-workbench.action.terminal.scrollDown",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
+    },
+    {
+        "key": "ctrl+alt+pageup",
+        "command": "-workbench.action.terminal.scrollUp",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    {
+        "key": "ctrl+pageup",
+        "command": "-workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    {
+        "key": "ctrl+pagedown",
+        "command": "-workbench.action.terminal.focusNext",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "-workbench.action.quickOpenLeastRecentlyUsedEditorInGroup",
+        "when": "!activeEditorGroupEmpty"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "-workbench.action.quickOpenNavigatePreviousInEditorPicker",
+        "when": "inEditorsPicker && inQuickOpen"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.nextEditor",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+pagedown",
+        "command": "-workbench.action.nextEditor"
     }
 ]

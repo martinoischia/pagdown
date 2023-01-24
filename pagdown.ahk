@@ -17,6 +17,7 @@ GroupAdd, pagdowntoswitchtab, ahk_exe SumatraPDF.exe
 GroupAdd, pagdowntoswitchtab, ahk_exe chrome.exe
 GroupAdd, pagdowntoswitchtab, ahk_exe AcrobatSDIWindow
 GroupAdd, pagdowntoswitchtab, ahk_exe notepad++.exe
+GroupAdd, pagdowntoswitchtab, ahk_exe code.exe
 return
 
 
@@ -26,26 +27,15 @@ F10::
 Send, ^w
 return
 
-
-
-
 #IfWinActive ahk_group pagdowntoswitchtab
-PgUp::
+$PgUp::
 Send, ^+{Tab}}
 return
-
-PgDn::
+	
+$PgDn::
 Send, ^{Tab}}
 return
 
-#IfWinActive ahk_exe code.exe
-PgUp::
-Send, ^+{PgUp}}
-return
-
-PgDn::
-Send, ^+{PgDn}}
-return
 #IfWinActive
 
 
