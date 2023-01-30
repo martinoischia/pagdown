@@ -55,6 +55,12 @@ $+[::Send,{+}
 
 $=::Send,{[}
 
+!`::Send,{ASC 0180}
+
+`::Send, {ASC 0126}
+
++`::Send, {ASC 0096}
+
 ^+SPACE::  Winset, Alwaysontop, , A
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
