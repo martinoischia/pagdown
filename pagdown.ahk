@@ -23,7 +23,7 @@ return
 
 
 #IfWinActive ahk_group f10ctrlw_insteadof_altf4
-F10::
+Ins::
 Send, ^w
 return
 
@@ -46,64 +46,71 @@ return
 ;;random;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-CapsLock::suspend
+^7::suspend
 return
 
-$[::Send,{=}
+Tab::Send, {Esc}
+CapsLock::Send, {Tab}
 
-$+[::Send,{+}
-
-$=::Send,{[}
+!PgUp::Send,{PgUp}
+!PgDn::Send,{PgDn}
 
 ^+SPACE::  Winset, Alwaysontop, , A
+
+
+;$[::Send,{=}
+
+;$+[::Send,{+}
+
+;$=::Send,{[}
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; number  row ;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-$1::Send, {#}
+;$1::Send, {#}
 
-$2::
-Send, {\}
-return
+;$2::
+;Send, {\}
+;return
 
-$+2::
-Send, {|}
-return
+;$+2::
+;Send, {|}
+;return
 
-$3::
-Send, {{}
-return
+;$3::
+;Send, {{}
+;return
 
-$+3::
-Send, {@}
-return
+;$+3::
+;Send, {@}
+;return
 
-$4::
-Send, {$}
-return
+;$4::
+;Send, {$}
+;return
 
-$5::Send,{Up}
+;$5::Send,{Up}
 
-$6::
-Send, {^}
-return
+;$6::
+;Send, {^}
+;return
 
-$7::
-Send,{}}
-return
+;$7::
+;Send,{}}
+;return
 
-$8::
-Send, {*}
-return
+;$8::
+;Send, {*}
+;return
 
-$9::
-Send, {(}
-return
-
-$0::
-Send,{)}
-return
+;$9::
+;Send, {(}
+;return
+;$0::
+;Send,{)}
+;return
 
 ;;;; FunctionRow ;;;
 
@@ -124,17 +131,19 @@ Send, ^v
 return
 
 F9::
-Send, ^s
+Send, ^f
 return
 
 F10::
-Send, !{F4}
+Send, !{Tab}
 return
 
 F11::Send,^t
+F12::Send,^+t
 
-PrintScreen::
-Send, #n
+
+Ins::
+Send, !{F4}
 return
 
 F5::
