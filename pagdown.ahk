@@ -49,8 +49,12 @@ return
 ^7::suspend
 return
 
-Tab::Send, {Esc}
+$Tab::Send, {Esc}
 CapsLock::Send, {Tab}
+
+Esc::Send, ^+z
+
+VK02B::Send, ^r
 
 !PgUp::Send,{PgUp}
 !PgDn::Send,{PgDn}
