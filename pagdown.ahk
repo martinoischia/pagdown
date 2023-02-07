@@ -205,22 +205,22 @@ else
 return
 
 F8::
-if !WinExist("ahk_exe ApplicationFrameHost.exe")
+if !WinExist("ahk_exe Teams.exe")
 {
-Run "C:\Program Files\WindowsApps\5319275A.WhatsAppDesktop_2.2252.7.0_x64__cv1g1gvanyjgm\WhatsApp.exe"
+Run "C:\Users\mischia\AppData\Local\Microsoft\Teams"
 }
 else
 {
-	WinGet, WinListVariable, List, ahk_exe ApplicationFrameHost.exe
+	WinGet, WinListVariable, List, ahk_exe Teams.exe
 	if (WinListVariable>1)
 	{
 		WinGet, ActiveExe, ProcessName, A
-		if (ActiveExe=="ApplicationFrameHost.exe")
+		if (ActiveExe=="Teams.exe")
 		{
 		WinSet, Bottom,, A
 		}
 	}
-	WinActivate, ahk_exe ApplicationFrameHost.exe
+	WinActivate, ahk_exe Teams.exe
 }
 return
 
