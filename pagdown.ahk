@@ -52,9 +52,9 @@ return
 $Tab::Send, {Esc}
 CapsLock::Send, {Tab}
 
-Esc::Send, ^+z
+$Esc::Send, ^+z
 
-VK02B::Send, ^r
+SC056::Send, ^r
 
 !PgUp::Send,{PgUp}
 !PgDn::Send,{PgDn}
