@@ -49,6 +49,8 @@ return
 ^7::suspend
 return
 
+^8::Send, {F7}
+
 $Tab::Send, {Esc}
 CapsLock::Send, {Tab}
 
@@ -64,6 +66,11 @@ SC056::Send, ^r
 `::Send, {ASC 0126}
 
 +`::Send, {ASC 0096}
+
+
+Media_Next::Send, !{Right}
+Media_Prev::Send, !{Left}
+
 
 ^+SPACE::  Winset, Alwaysontop, , A
 
@@ -197,7 +204,7 @@ else
 }
 return
 
-F7::
+$F7::
 if !WinExist("ahk_exe notepad++.exe")
 {
 Run notepad++.exe
