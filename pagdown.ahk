@@ -49,10 +49,9 @@ return
 ^7::suspend
 return
 
-^8::Send, {F7}
+^8::Send, {8 Up}{F7}
 
-$Tab::Send, {Esc}
-CapsLock::Send, {Tab}
+CapsLock::Send, {Esc}
 
 $Esc::Send, ^+z
 
@@ -62,11 +61,6 @@ SC056::Send, ^r
 !PgDn::Send,{PgDn}
 
 !`::Send,{ASC 0180}
-
-`::Send, {ASC 0126}
-
-+`::Send, {ASC 0096}
-
 
 Media_Next::Send, !{Right}
 Media_Prev::Send, !{Left}
