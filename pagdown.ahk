@@ -7,43 +7,57 @@
 ;GroupAdd, altf4 , ahk_class GraphApp
 ;GroupAdd, altf4 , ahk_class RGLDevice
 
-GroupAdd, f10ctrlw_insteadof_altf4 , ahk_exe code.exe
-GroupAdd, f10ctrlw_insteadof_altf4 , ahk_exe chrome.exe
-GroupAdd, f10ctrlw_insteadof_altf4 , ahk_exe notepad++.exe
-GroupAdd, f10ctrlw_insteadof_altf4, ahk_exe SumatraPDF.exe
+GroupAdd, 0ctrlw_insteadof_altf4 , ahk_exe code.exe
+GroupAdd, 0ctrlw_insteadof_altf4 , ahk_exe chrome.exe
+GroupAdd, 0ctrlw_insteadof_altf4 , ahk_exe notepad++.exe
+GroupAdd, 0ctrlw_insteadof_altf4, ahk_exe SumatraPDF.exe
 
-GroupAdd, pagdowntoswitchtab, ahk_exe ApplicationFrameHost.exe
-GroupAdd, pagdowntoswitchtab, ahk_exe SumatraPDF.exe
-GroupAdd, pagdowntoswitchtab, ahk_exe chrome.exe
-GroupAdd, pagdowntoswitchtab, ahk_exe AcrobatSDIWindow
-GroupAdd, pagdowntoswitchtab, ahk_exe notepad++.exe
-GroupAdd, pagdowntoswitchtab, ahk_exe code.exe
+GroupAdd, 78toswitchtab, ahk_exe ApplicationFrameHost.exe
+GroupAdd, 78toswitchtab, ahk_exe SumatraPDF.exe
+GroupAdd, 78toswitchtab, ahk_exe chrome.exe
+GroupAdd, 78toswitchtab, ahk_exe AcrobatSDIWindow
+GroupAdd, 78toswitchtab, ahk_exe notepad++.exe
+GroupAdd, 78toswitchtab, ahk_exe code.exe
 return
 
 
 
-#IfWinActive ahk_group f10ctrlw_insteadof_altf4
-Ins::
+#IfWinActive ahk_group 0ctrlw_insteadof_altf4
+$0::
 Send, ^w
 return
 
-#IfWinActive ahk_group pagdowntoswitchtab
-$PgUp::
+#IfWinActive ahk_group 78toswitchtab
+$7::
 Send, ^+{Tab}}
 return
 	
-$PgDn::
+$8::
 Send, ^{Tab}}
 return
 
 #IfWinActive
 
+;;;;;;;keeps num pad off permanently
+SetNumlockState, AlwaysOff
 
+;;;;;;;set num pad with num off
+$SC04F::1
+$SC050::2
+$SC051::3
+$SC04B::4
+$SC04C::5
+$SC04D::6
+$SC047::7
+$SC048::8
+$SC049::9
+$SC052::0
+$SC053::.
 
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;random;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;random key strokes for numpad;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ^7::suspend
@@ -51,19 +65,16 @@ return
 
 ^8::Send, {8 Up}{F7}
 
+;;;;;;;; other ;;;;;;;;;;;;;
+
 CapsLock::Send, {Esc}
 
-$Esc::Send, ^+z
+SC056::Send, ^r ;;; stupid english layout key on the left of Z
 
-SC056::Send, ^r
+!`::Send,{ASC 0180} ;; broken in npp it seems
 
-!PgUp::Send,{PgUp}
-!PgDn::Send,{PgDn}
-
-!`::Send,{ASC 0180}
-
-Media_Next::Send, !{Right}
-Media_Prev::Send, !{Left}
+$Home::Send, ^f
+$End::Send, ^r
 
 
 ^+SPACE::  Winset, Alwaysontop, , A
@@ -80,84 +91,89 @@ Media_Prev::Send, !{Left}
 ;;;; number  row ;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;$1::Send, {#}
+$1::Send, ^``
 
-;$2::
-;Send, {\}
-;return
-
-;$+2::
-;Send, {|}
-;return
-
-;$3::
-;Send, {{}
-;return
-
-;$+3::
-;Send, {@}
-;return
-
-;$4::
-;Send, {$}
-;return
-
-;$5::Send,{Up}
-
-;$6::
-;Send, {^}
-;return
-
-;$7::
-;Send,{}}
-;return
-
-;$8::
-;Send, {*}
-;return
-
-;$9::
-;Send, {(}
-;return
-;$0::
-;Send,{)}
-;return
-
-;;;; FunctionRow ;;;
-
-F1::
-Send, ^z
+$2::
+Send,!{Tab}
 return
 
-F2::
-Send, ^x
+$3::
+Send, {PgUp}
 return
 
-F3::
-Send, ^c
+
+$4::
+Send, {PgDn}
 return
 
-F4::
+$5::Send,^c
+
+$6::
 Send, ^v
 return
 
-F9::
-Send, ^f
+$9::
+Send, ^t
 return
 
-F10::
-Send, !{Tab}
+$0::
+Send,!{F4}
 return
 
-F11::Send,^t
-F12::Send,^+t
 
+;;;; FunctionRow ;;;
 
-Ins::
-Send, !{F4}
+$Esc::Send, ^+`
+
+F1::
+Send, 1
+return
+
+F2::
+Send, 2
+return
+
+F3::
+Send, 3
+return
+
+F4::
+Send, 4
 return
 
 F5::
+Send, 5
+return
+
+F6::
+Send, 6
+return
+
+$F7::
+Send, 7
+return
+
+F8::
+Send, 8
+return
+
+F9::
+Send, 9
+return
+
+F10:: Send, 0
+
+F11::
+Send, {F7}
+return
+
+F12::Send,^u
+
+Ins::
+Send, ^d
+return
+
+^F5::
 if !WinExist("ahk_exe chrome.exe")
 {
 Run "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
@@ -178,7 +194,7 @@ else
 return
 
 
-F6::
+^F6::
 if !WinExist("ahk_exe code.exe")
 {
 Run "C:\Users\ischi\AppData\Local\Programs\Microsoft VS Code\Code.exe"
@@ -198,7 +214,7 @@ else
 }
 return
 
-$F7::
+^F7::
 if !WinExist("ahk_exe notepad++.exe")
 {
 Run notepad++.exe
@@ -218,10 +234,10 @@ else
 }
 return
 
-F8::
+^F8::
 if !WinExist("ahk_exe ApplicationFrameHost.exe")
 {
-Run "C:\Program Files\WindowsApps\5319275A.WhatsAppDesktop_2.2252.7.0_x64__cv1g1gvanyjgm\WhatsApp.exe"
+Run "C:\Users\ischi\OneDrive\Desktop\Whatsapp - Shortcut.lnk"
 }
 else
 {
@@ -235,6 +251,68 @@ else
 		}
 	}
 	WinActivate, ahk_exe ApplicationFrameHost.exe
+}
+return
+
+^F9::
+if !WinExist("ahk_exe SumatraPDF.exe")
+{
+Run "C:\Users\ischi\AppData\Local\SumatraPDF\SumatraPDF.exe"
+}
+else
+{
+	WinGet, WinListVariable, List, ahk_exe SumatraPDF.exe
+	if (WinListVariable>1)
+	{
+		WinGet, ActiveExe, ProcessName, A
+		if (ActiveExe=="SumatraPDF.exe")
+		{
+		WinSet, Bottom,, A
+		}
+	}
+	WinActivate, ahk_exe SumatraPDF.exe
+}
+return
+
+^F10::
+if !WinExist("ahk_class CabinetWClass ahk_exe Explorer.exe")
+{
+Run "C:\WINDOWS\explorer"
+}
+else
+{
+	WinGet, WinListVariable, List, ahk_class CabinetWClass ahk_exe Explorer.exe
+	if (WinListVariable>1)
+	{
+		;MsgBox, You typed btw.
+		WinGet, ActiveExe, ProcessName, A
+		;MsgBox % "You typed twice " . ActiveExe
+		if (ActiveExe=="Explorer.EXE")
+		{
+		WinSet, Bottom,, A
+		}
+	}
+	WinActivate, ahk_class CabinetWClass ahk_exe explorer.exe
+}
+return
+
+^F11::
+if !WinExist("ahk_exe OUTLOOK.exe")
+{
+Run "C:\Program Files (x86)\Microsoft Office\root\Office16\OUTLOOK.EXE"
+}
+else
+{
+	WinGet, WinListVariable, List, ahk_exe OUTLOOK.exe
+	if (WinListVariable>1)
+	{
+		WinGet, ActiveExe, ProcessName, A
+		if (ActiveExe=="OUTLOOK.exe")
+		{
+		WinSet, Bottom,, A
+		}
+	}
+	WinActivate, ahk_exe OUTLOOK.exe
 }
 return
 
@@ -280,25 +358,6 @@ Send, {Volume_Mute}
 ;  }
 ; return
 
-;ScrollLock::
-;if !WinExist("ahk_exe OUTLOOK.exe")
-;{
-;Run "C:\Program Files (x86)\Microsoft Office\root\Office16\OUTLOOK.EXE"
-;}
-;else
-;{
-;	WinGet, WinListVariable, List, ahk_exe OUTLOOK.exe
-;	if (WinListVariable>1)
-;	{
-;		WinGet, ActiveExe, ProcessName, A
-;		if (ActiveExe=="OUTLOOK.exe")
-;		{
-;		WinSet, Bottom,, A
-;		}
-;	}
-;	WinActivate, ahk_exe OUTLOOK.exe
-;}
-;return
 
 ;Pause::
 ;Send, ^w
