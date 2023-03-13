@@ -10,13 +10,17 @@ endif
 set number 
 set ignorecase
 set smartcase
+set hlsearch
+
 set so=999
 set nowrap
 set nowrapscan
 syntax on
+
 set cindent
 set shiftwidth=4
 set tabstop=4
+
 set guifont=roboto_mono:h15
 set shiftround " just when type >> when you already have 2 spaces it just adds 2
 setlocal path=.,,
@@ -26,6 +30,7 @@ setlocal path=.,,
 vmap <silent> <C-X> "+x
 vmap <silent> <C-C> "+y
 imap <silent> <C-V> <Space><Esc>"+gPi<Delete>
+inoremap <C-Space> <C-p>
 
 function! NewBrowser()
     20vs | :e .
