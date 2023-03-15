@@ -1,3 +1,4 @@
 creating a symbolic link on windows:
 
-mklink instead of ln -s
+instead of ln -s
+mklink C:\Users\mischia\xxx "C:\Users\mischia\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\pagdown\xxx"  

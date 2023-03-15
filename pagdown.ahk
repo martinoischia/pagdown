@@ -316,6 +316,26 @@ else
 }
 return
 
+^F12::
+if !WinExist("ahk_exe Teams.exe")
+{
+Run "C:\Program Files (x86)\Microsoft Office\root\Office16\Teams.EXE"
+}
+else
+{
+	WinGet, WinListVariable, List, ahk_exe Teams.exe
+	if (WinListVariable>1)
+	{
+		WinGet, ActiveExe, ProcessName, A
+		if (ActiveExe=="Teams.exe")
+		{
+		WinSet, Bottom,, A
+		}
+	}
+	WinActivate, ahk_exe Teams.exe
+}
+return
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;  MOUSE  ;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

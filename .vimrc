@@ -17,13 +17,14 @@ set nowrap
 set nowrapscan
 syntax on
 
-set cindent
+set smartindent
 set shiftwidth=4
 set tabstop=4
 
 set guifont=roboto_mono:h15
 set shiftround " just when type >> when you already have 2 spaces it just adds 2
 setlocal path=.,,
+set backspace=indent,eol,start
 
 " Add Ctrl-X, Ctrl-C (cut, copy) in visual and insert mode;
 " and Ctrl-V (paste) in insert mode:
