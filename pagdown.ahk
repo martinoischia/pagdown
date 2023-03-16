@@ -28,11 +28,11 @@ Send, ^w
 return
 
 #IfWinActive ahk_group 78toswitchtab
-$7::
+$5::
 Send, ^+{Tab}}
 return
 	
-$8::
+$6::
 Send, ^{Tab}}
 return
 
@@ -106,11 +106,9 @@ $4::
 Send, {PgDn}
 return
 
-$5::Send,^c
+$7::Send,{Home}
 
-$6::
-Send, ^v
-return
+$8::Send,{End}
 
 $9::
 Send, ^t
@@ -123,7 +121,8 @@ return
 
 ;;;; FunctionRow ;;;
 
-$Esc::Send, ^+`
+$Esc::Send, {Enter}
+^Esc::Send, ^+`
 
 F1::
 Send, 1
