@@ -32,12 +32,41 @@ vmap <silent> <C-X> "+x
 vmap <silent> <C-C> "+y
 imap <silent> <C-V> <Space><Esc>"+gPi<Delete>
 inoremap <C-Space> <C-p>
+noremap t F
+noremap F t
+
 
 function! NewBrowser()
     20vs | :e .
 endfunction
 " F12 to open a new netrw file browser buffer.
 nnoremap <silent> <F12> :call NewBrowser()<CR>
+
+if 1
+  " Quite a few people accidentally type "q:" instead of ":q" and get confused
+  " by the command line window.  Give a hint about how to get out.
+  " If you don't like this you can put this in your vimrc:
+  " ":augroup vimHints | exe 'au!' | augroup END"
+  augroup vimHints
+    au!
+    autocmd CmdwinEnter *
+	  \ echohl Todo | 
+	  \ echo 'You discovered the command-line window! You can close it with ":q".' |
+	  \ echohl None
+  augroup END
+
+endif
+
+" Convenient command to see the difference between the current buffer and the
+" file it was loaded from, thus the changes you made.
+" Only define it when not defined already.
+" Revert with: ":delcommand DiffOrig".
+if !exists(":DiffOrig")
+  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
+		  \ | wincmd p | diffthis
+endif
+
+
 "___________________
 
 " Rafael part, modified (original file in this vim_notes folder)
