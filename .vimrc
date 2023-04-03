@@ -20,6 +20,7 @@ syntax on
 set smartindent
 set shiftwidth=4
 set tabstop=4
+set shortmess-=S
 
 set guifont=roboto_mono:h15
 set shiftround " just when type >> when you already have 2 spaces it just adds 2
