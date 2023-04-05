@@ -6,7 +6,9 @@ if has("win32")
 endif
 "set shell=C:/Users/mischia/AppData/Local/Programs/Git/usr/bin/bash.exe
 
-" TO be worked upon: folding and fold marks
+set laststatus=2
+set statusline=%<%f\ %h%m%r%y%=%-14.(%l,%c%)\ %P
+
 set number 
 set ignorecase
 set smartcase
