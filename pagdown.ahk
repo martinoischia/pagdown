@@ -9,14 +9,14 @@
 
 GroupAdd, 0ctrlw_insteadof_altf4 , ahk_exe code.exe
 GroupAdd, 0ctrlw_insteadof_altf4 , ahk_exe chrome.exe
-GroupAdd, 0ctrlw_insteadof_altf4 , ahk_exe notepad++.exe
+GroupAdd, 0ctrlw_insteadof_altf4 , ahk_exe gvim.exe
 GroupAdd, 0ctrlw_insteadof_altf4, ahk_exe SumatraPDF.exe
 
 GroupAdd, 78toswitchtab, ahk_exe ApplicationFrameHost.exe
 GroupAdd, 78toswitchtab, ahk_exe SumatraPDF.exe
 GroupAdd, 78toswitchtab, ahk_exe chrome.exe
 GroupAdd, 78toswitchtab, ahk_exe AcrobatSDIWindow
-GroupAdd, 78toswitchtab, ahk_exe notepad++.exe
+GroupAdd, 78toswitchtab, ahk_exe gvim.exe
 GroupAdd, 78toswitchtab, ahk_exe code.exe
 return
 
@@ -214,22 +214,22 @@ else
 return
 
 ^F7::
-if !WinExist("ahk_exe notepad++.exe")
+if !WinExist("ahk_exe gvim.exe")
 {
-Run notepad++.exe
+Run "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Vim 9.0"
 }
 else
 {
-	WinGet, WinListVariable, List, ahk_exe notepad++.exe
+	WinGet, WinListVariable, List, ahk_exe gvim.exe
 	if (WinListVariable>1)
 	{
 		WinGet, ActiveExe, ProcessName, A
-		if (ActiveExe=="notepad++.exe")
+		if (ActiveExe=="gvim.exe")
 		{
 		WinSet, Bottom,, A
 		}
 	}
-	WinActivate, ahk_exe notepad++.exe
+	WinActivate, ahk_exe gvim.exe
 }
 return
 
