@@ -3,13 +3,14 @@ if has("win32")
     set shellpipe=|
     set shellredir=>
     set shellcmdflag=
+	cd txt_documents
 endif
 "set shell=C:/Users/mischia/AppData/Local/Programs/Git/usr/bin/bash.exe
 
 set laststatus=2
 set statusline=%<%f\ %h%m%r%y%=%-14.(%l,%c%)\ %P
 
-set number 
+set nonumber 
 set ignorecase
 set smartcase
 set hlsearch
@@ -28,6 +29,8 @@ set guifont=roboto_mono:h15
 set shiftround " just when type >> when you already have 2 spaces it just adds 2
 setlocal path=.,,
 set backspace=indent,eol,start
+set splitright
+set splitbelow
 
 " Add Ctrl-X, Ctrl-C (cut, copy) in visual and insert mode;
 " and Ctrl-V (paste) in insert mode:
@@ -69,6 +72,8 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
+map <C-Tab> <Esc>:bn
+map <C-s-Tab> <Esc>:bp
 
 "___________________
 

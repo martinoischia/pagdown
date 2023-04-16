@@ -55,17 +55,10 @@ $SC052::0
 $SC053::.
 
 
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;random key strokes for numpad;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;; other ;;;;;;;;;;;;;
 
 ^7::suspend
 return
-
-^8::Send, {8 Up}{F7}
-
-;;;;;;;; other ;;;;;;;;;;;;;
 
 CapsLock::Send, {Esc}
 
@@ -78,14 +71,6 @@ $End::Send, ^r
 
 
 ^+SPACE::  Winset, Alwaysontop, , A
-
-
-;$[::Send,{=}
-
-;$+[::Send,{+}
-
-;$=::Send,{[}
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; number  row ;;;;;;;;;
@@ -122,7 +107,7 @@ return
 ;;;; FunctionRow ;;;
 
 $Esc::Send, {Enter}
-^Esc::Send, ^+`
+^Esc::Send, ^+``
 
 F1::
 Send, 1
@@ -216,7 +201,7 @@ return
 ^F7::
 if !WinExist("ahk_exe gvim.exe")
 {
-Run "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Vim 9.0"
+Run "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Vim 9.0\gVim"
 }
 else
 {
@@ -352,16 +337,16 @@ return
 Send, {PgUp}
 return
 
-!WheelDown::
-Send, {Volume_Down}
-return
-
-!WheelUp::
-Send, {Volume_Up}
-return
-
-!LButton::
-Send, {Volume_Mute}
+;!WheelDown::
+;Send, {Volume_Down}
+;return
+;
+;!WheelUp::
+;Send, {Volume_Up}
+;return
+;
+;!LButton::
+;Send, {Volume_Mute}
 
 
 
