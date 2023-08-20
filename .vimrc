@@ -1,11 +1,20 @@
 if has("win32")
-    set shell=C:\Windows\Sysnative\wsl.exe
-    set shellpipe=|
-    set shellredir=>
-    set shellcmdflag=
-	cd txt_documents
+    "set shell=\"C:\Program\ files\Git\git-bash\"
+	"set shell=C:/Users/mischia/AppData/Local/Programs/Git/usr/bin/bash.exe
+	"set shell=\"C:\\Program\\\ Files\\Git\\usr\\bin\"   what is vimruntime.exe ????
+    "set shellpipe=|
+    "set shellredir=>
+	"set shellcmdflag=
+	if has("gui_running")
+		if argc() == 0
+			augroup vimrc
+				" Remove all vimrc autocommands
+				autocmd!
+				au VimEnter * e C:\Users\ischi\txt_documents\vim_todo
+			augroup END
+		endif
+	endif
 endif
-"set shell=C:/Users/mischia/AppData/Local/Programs/Git/usr/bin/bash.exe
 
 set laststatus=2
 set statusline=%<%f\ %h%m%r%y%=%-14.(%l,%c%)\ %P
@@ -18,12 +27,13 @@ set hlsearch
 set so=999
 set nowrap
 set nowrapscan
-syntax on
 
 set smartindent
 set shiftwidth=4
 set tabstop=4
 set shortmess-=S
+filetype plugin indent on 
+syntax on
 
 set guifont=roboto_mono:h15
 set shiftround " just when type >> when you already have 2 spaces it just adds 2
@@ -38,9 +48,6 @@ vmap <silent> <C-X> "+x
 vmap <silent> <C-C> "+y
 imap <silent> <C-V> <Space><Esc>"+gPi<Delete>
 inoremap <C-Space> <C-p>
-noremap t F
-noremap F t
-
 
 function! NewBrowser()
     20vs | :e .
@@ -60,7 +67,6 @@ if 1
 	  \ echo 'You discovered the command-line window! You can close it with ":q".' |
 	  \ echohl None
   augroup END
-
 endif
 
 " Convenient command to see the difference between the current buffer and the

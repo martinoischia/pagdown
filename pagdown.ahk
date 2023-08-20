@@ -189,12 +189,12 @@ else
 	if (WinListVariable>1)
 	{
 		WinGet, ActiveExe, ProcessName, A
-		if (ActiveExe=="code.exe")
+		if (ActiveExe=="Code.exe")
 		{
 		WinSet, Bottom,, A
 		}
 	}
-	WinActivate, ahk_exe code.exe
+	WinActivate, ahk_exe Code.exe
 }
 return
 
@@ -259,19 +259,19 @@ else
 return
 
 ^F10::
-if !WinExist("ahk_class CabinetWClass ahk_exe Explorer.exe")
+if !WinExist("ahk_class CabinetWClass ahk_exe explorer.exe")
 {
 Run "C:\WINDOWS\explorer"
 }
 else
 {
-	WinGet, WinListVariable, List, ahk_class CabinetWClass ahk_exe Explorer.exe
+	WinGet, WinListVariable, List, ahk_class CabinetWClass ahk_exe explorer.exe
 	if (WinListVariable>1)
 	{
 		;MsgBox, You typed btw.
 		WinGet, ActiveExe, ProcessName, A
 		;MsgBox % "You typed twice " . ActiveExe
-		if (ActiveExe=="Explorer.EXE")
+		if (ActiveExe=="explorer.exe")
 		{
 		WinSet, Bottom,, A
 		}

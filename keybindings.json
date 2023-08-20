@@ -636,5 +636,24 @@
         "key": "shift+pagedown",
         "command": "-workbench.action.terminal.scrollDownPage",
         "when": "terminalFocus && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "-workbench.action.terminal.copyAndClearSelection",
+        "when": "terminalFocus && terminalHasBeenCreated && terminalTextSelected || terminalFocus && terminalProcessSupported && terminalTextSelected"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "editor.action.clipboardCopyAction",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "-editor.action.clipboardCopyAction"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "workbench.action.terminal.copyAndClearSelection",
+        "when": "terminalFocus"
     }
 ]
