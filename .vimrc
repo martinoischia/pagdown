@@ -17,7 +17,9 @@ if has("win32")
 endif
 
 set laststatus=2
-set statusline=%<%f\ %h%m%r%y%=%-14.(%l,%c%)\ %P
+set statusline=%<[%n]%f\ %h%m%r%y%=%-14.(%l,%c%)\ %P
+
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 set nonumber 
 set ignorecase
@@ -78,8 +80,8 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
-map <C-Tab> <Esc>:bn
-map <C-s-Tab> <Esc>:bp
+map <C-Tab> <Esc>:bn<CR>
+map <C-s-Tab> <Esc>:bp<CR>
 
 "___________________
 
