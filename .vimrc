@@ -1,23 +1,16 @@
-if has("win32")
-    "set shell=\"C:\Program\ files\Git\git-bash\"
-	"set shell=C:/Users/mischia/AppData/Local/Programs/Git/usr/bin/bash.exe
-	"set shell=\"C:\\Program\\\ Files\\Git\\usr\\bin\"   what is vimruntime.exe ????
-    "set shellpipe=|
-    "set shellredir=>
-	"set shellcmdflag=
-	if has("gui_running")
-		if argc() == 0
-			augroup vimrc
-				" Remove all vimrc autocommands
-				autocmd!
-				au VimEnter * e C:\Users\ischi\txt_documents\vim_todo
-			augroup END
-		endif
-	endif
+au BufWritePost  /home/mischia/googledrive/txt_documents/* !make -f /home/mischia/googledrive/Makefile push
+" au BufReadCmd   /home/mischia/googledrive/txt_documents/* !make -f /home/mischia/googledrive/Makefile pull \| noautocmd read <amatch>
+
+if argc() == 0
+	augroup vimrc
+		" Remove all vimrc autocommands
+		autocmd!
+		au VimEnter * cd ~/googledrive/txt_documents/ | e fbk_todo |vs vim_todo | wincmd w
+	augroup END
 endif
 
 set laststatus=2
-set statusline=%<[%n]%f\ %h%m%r%y%=%-14.(%l,%c%)\ %P
+set statusline=[%n]%<%t\ %h%m%r%y%=%-14.(%l,%c%)\ %P
 
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
@@ -82,6 +75,45 @@ endif
 
 map <C-Tab> <Esc>:bn<CR>
 map <C-s-Tab> <Esc>:bp<CR>
+command Vt vert term
+command VT vert term
+command VS vert term
+command Vs vert term
+command W write
+
+au TerminalWinOpen * setlocal bufhidden=hide
+
+tnoremap <Esc> <C-w>N
+
+inoremap <c-w><c-w> <esc><c-w><c-w>gi
+inoremap <c-w>j <esc><c-w>jgi
+inoremap <c-w>k <esc><c-w>kgi
+inoremap <c-w>h <esc><c-w>hgi
+inoremap <c-w>l <esc><c-w>lgi
+
+inoremap <c-w> <nop>
+inoremap <c-z> <esc><c-z>
+
+" Search for selected text, forwards or backwards.
+vnoremap <silent> * :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy/<C-R>=&ic?'\c':'\C'<CR><C-R><C-R>=substitute(
+  \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gVzv:call setreg('"', old_reg, old_regtype)<CR>
+vnoremap <silent> # :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy?<C-R>=&ic?'\c':'\C'<CR><C-R><C-R>=substitute(
+  \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gVzv:call setreg('"', old_reg, old_regtype)<CR>
+
+" Terminal in current window
+command TerCur term ++curwin
+cnoreabbrev <expr> ter getcmdtype() == ":" && getcmdline() == 'ter' ? 'TerCur' : 'ter'
+cnoreabbrev <expr> term getcmdtype() == ":" && getcmdline() == 'term' ? 'TerCur' : 'ter'
+"
+"
+"
+
 
 "___________________
 
